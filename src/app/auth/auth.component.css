@@ -1,0 +1,63 @@
+.container
+{
+  position: absolute;
+  top: 30%;
+  left: calc(50% - 240px);
+  max-width: 450px;
+  min-width: 400px;
+}
+
+.login-card
+{
+  background-color: #cccccc;
+}
+
+.form-group
+{
+  padding: 10px 0;
+  display: flex;
+}
+
+.form-group-item
+{
+  flex-grow: 1;
+}
+
+.input-area
+{
+  flex-grow: 2;
+  padding-right: 25px;
+  font-size: 12pt;
+  max-width: 280px;
+}
+
+.material-icons
+{
+  margin-left: -25px;
+}
+
+.button_error
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.button-group
+{
+  padding-top: 10px;
+  text-align: right;
+}
+
+.button
+{
+  flex-grow: 1;
+  font-size: 12pt;
+}
+
+.error_msg
+{
+  flex-grow: 2;
+  color: red;
+  font-size: 10pt;
+  text-align: right;
+}

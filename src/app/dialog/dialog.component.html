@@ -1,0 +1,51 @@
+<div class="container">
+  <mat-card class="register-card">
+
+    <mat-card-header>
+      <mat-card-title>User Profile</mat-card-title>
+    </mat-card-header>
+    <hr>
+    <mat-card-content>
+      <form *ngFor="let item of items">
+          <div *ngIf="!hideItem(item)"
+                class="form-group">
+              <mat-label class="form-group-item"
+                          for="item">{{user_service.fixName(item)}}</mat-label>
+              <input type="typeof item"
+                    class="input-area"
+                    [readOnly]="!edittable"
+                    [(ngModel)]="user[item]"
+                    name="item"
+                    required>
+            </div>
+      </form>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <div class="button-group">
+        <button mat-raised-button
+                *ngIf="edittable"
+                color="primary"
+                class="update-button"
+                (click)="onClose(true)">
+          Update
+        </button>
+
+        <button mat-raised-button
+                *ngIf="edittable"
+                color="primary"
+                class="update-button"
+                (click)="onClose(false)">
+          Cancel
+        </button>
+        <button mat-raised-button
+                *ngIf="!edittable"
+                color="primary"
+                class="update-button"
+                (click)="onClose(true)">
+          OK
+        </button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>

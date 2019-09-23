@@ -1,0 +1,65 @@
+<div class="container">
+  <mat-card class="login-card">
+
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+
+    <hr>
+
+    <mat-card-content>
+      <form>
+        <div class="form-group">
+          <mat-label class="form-group-item"
+                      for="user_mail">Mail Adress: </mat-label>
+          <input matInput type="text"
+                class="input-area"
+                placeholder="enter user_mail"
+                [(ngModel)]="user.user_mail"
+                name="email"
+                (keyup.enter)="submitLogin()"
+                required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-group-item"
+                  for="password">Password: </label>
+          <input matInput
+                id="password_field"
+                type="password"
+                class="input-area"
+                placeholder="enter password"
+                [(ngModel)]="user.user_password"
+                name="user_password"
+                (keyup.enter)="submitLogin()"
+                showHideInput
+                required>
+          <i matSuffix
+            class="material-icons"
+            showHideTrigger="password_field"
+            [showHideStatus]="{ materialIcon: true, id: 'password_field' }"
+          ></i>
+        </div>
+      </form>
+    </mat-card-content>
+
+    <mat-card-actions class="button_error">
+      <span class="error_msg">{{error_msg}}</span>
+      <div class="button-group">
+        <button mat-raised-button
+                class="button"
+                (click)="submitLogin()">
+          Login
+        </button>
+        <button mat-raised-button
+                color="primary"
+                class="button"
+                (click)="register()">
+          Register
+        </button>
+      </div>
+    </mat-card-actions>
+
+  </mat-card>
+</div>
+  

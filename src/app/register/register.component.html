@@ -1,0 +1,53 @@
+<div class="container">
+  <mat-card class="register-card">
+
+    <mat-card-header>
+      <mat-card-title>Register</mat-card-title>
+    </mat-card-header>
+    <hr>
+    <mat-card-content>
+      <form *ngFor="let item of items">
+        <div *ngIf="item != 'user_id'"
+              class="form-group">
+            <mat-label class="form-group-item"
+                        for="item">{{user_service.fixName(item)}}</mat-label>
+            <input matInput
+                  type="typeof item"
+                  *ngIf="item != 'user_password'"
+                  id="input-area"
+                  class="input-area"
+                  [(ngModel)]="user[item]"
+                  name="item"
+                  required>
+            <input matInput
+                  type="typeof item"
+                  *ngIf="item == 'user_password'"
+                  id="input-area"
+                  class="input-area"
+                  [(ngModel)]="user[item]"
+                  name="item"
+                  showHideInput
+                  required>
+            <i matSuffix
+              *ngIf="item == 'user_password'"
+              class="material-icons"
+              showHideTrigger="input-area"
+              [showHideStatus]="{ materialIcon: true, id: 'input-area' }">
+            </i>
+          </div>
+      </form>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <div class="button-group">
+        <span class="error_msg">{{error_msg}}</span>
+        <button mat-raised-button
+                color="primary"
+                class="login-button"
+                (click)="submitRegister()">
+          Register
+        </button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>
